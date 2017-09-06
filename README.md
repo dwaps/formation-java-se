@@ -22,19 +22,24 @@ OU BIEN,
 
 
 ## 2. Utilisation
-Pour atteindre le code d'une leçon, utilisez la commande `git checkout` suivie de l'étiquette de la leçon. Chez DWAPS, une étiquette de leçon est toujours représentée de cette façon :
+Pour atteindre un TP en particulier, utilisez la commande `git checkout` suivie de l'étiquette du TP. Chez DWAPS, une étiquette de TP est toujours représentée de cette façon :
 
-* un *m* (1ère lettre du mot **module**) suivi d'un
-* *numero* (correspondant au numéro de module) suivi d'une
-* *lettre* (correspondant au numéro de la leçon du module)
+* les initiales *tp* suivies d'un
+* *numero* (correspondant au numéro du TP sachant que ils sont classés par difficulté croissante)
 
-Ainsi, si je veux me rendre à la leçon 3 (*c*) du 2ème module (*m2*) de la formation, je dois saisir cette commande depuis le dépôt :
+Ainsi, si je veux me rendre au 3ème TP, je dois saisir cette commande depuis le dépôt :
 
-    git checkout m2c
+    git checkout tp3
 
-Pour savoir quel code de leçon vous souhaitez atteindre, reportez-vous au plan de formation. Celui-ci indique clairement les titres des modules et des leçons.
+Pour savoir à quoi correspondent les divers TP, il suffit de les lister à l'aide de cette commande :
 
-*Remarque : Chaque cours **DWAPS** est partagé en plusieurs modules, et chaque module comportent plusieurs leçons. Certains cours peuvent n'avoir qu'un seul module, en attente d'une extension prochaine. Si c'est le cas, c'est que le module est suffisant pour le moment.*
+    git log
+
+Ou pour y voir plus clair :
+
+    git log --pretty=oneline --decorate --abbrev-commit
+
+*Remarque : Ces TP sont destinés principalement aux étudiants de **DWAPS Formation**. Cependant, ils sont gracieusement exposés ici au public pour que chacun puisse en profiter. Les centres de formations sont également autorisés à les utiliser pour leurs cours sans restrictions particulières. :)*
 
 ---
 
