@@ -1,22 +1,34 @@
 package fr.dwaps.javase;
 
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
-import fr.dwaps.classes.Repertory;
+import fr.dwaps.classes.Lion;
+import fr.dwaps.classes.Lionne;
+import fr.dwaps.classes.Marmotte;
+import fr.dwaps.classes.Tortue;
+import fr.dwaps.interfaces.Animal;
 
 public class Main {
 
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		Repertory repertory = new Repertory(sc);
-		boolean leafRepertory = true;
+		Lion georges = new Lion();
+		Lionne cindy = new Lionne();
+		Tortue amandine = new Tortue();
+		Marmotte stephanie = new Marmotte();
 		
-		while (leafRepertory) {
-			leafRepertory = repertory.searchContact();
+		List<Animal> animaux = new ArrayList<Animal>();
+		animaux.add(georges);
+		animaux.add(cindy);
+		animaux.add(amandine);
+		animaux.add(stephanie);
+		
+		for (Animal animal : animaux) {
+			System.out.printf("La %s est plus connue sous le nom de %s.\n", animal.scientificName(), animal.currentName());
 		}
 		
-		sc.close();
-		System.exit(0);
+		System.out.println("\nGeorges est un lion " + georges.getGender());
+		System.out.println("Cindy est une lionne " + cindy.getGender());
 	}
 
 }
