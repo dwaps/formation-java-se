@@ -1,34 +1,33 @@
 package fr.dwaps.javase;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import fr.dwaps.classes.Lion;
-import fr.dwaps.classes.Lionne;
-import fr.dwaps.classes.Marmotte;
-import fr.dwaps.classes.Tortue;
-import fr.dwaps.interfaces.Animal;
+import java.util.Scanner;
 
 public class Main {
 
 	public static void main(String[] args) {
-		Lion georges = new Lion();
-		Lionne cindy = new Lionne();
-		Tortue amandine = new Tortue();
-		Marmotte stephanie = new Marmotte();
+		MaFenetre fenetre = new MaFenetre();
+		Scanner sc = new Scanner(System.in);
+		boolean continuer = true;
 		
-		List<Animal> animaux = new ArrayList<Animal>();
-		animaux.add(georges);
-		animaux.add(cindy);
-		animaux.add(amandine);
-		animaux.add(stephanie);
-		
-		for (Animal animal : animaux) {
-			System.out.printf("La %s est plus connue sous le nom de %s.\n", animal.scientificName(), animal.currentName());
+		while (continuer) {
+			System.out.print("Largeur ? ");
+			int w = sc.nextInt();
+			sc.nextLine();
+			System.out.print("Hauteur ? ");
+			int h = sc.nextInt();
+			sc.nextLine();
+			
+			fenetre.setSize(w, h);
+			
+			System.out.print("Redimentionner à nouveau ? [oN] ");
+			String reponse = sc.nextLine();
+			
+			continuer = reponse.equals("o");
 		}
 		
-		System.out.println("\nGeorges est un lion " + georges.getGender());
-		System.out.println("Cindy est une lionne " + cindy.getGender());
+		System.out.println("Aurevoir !");
+		sc.close();
+		System.exit(0);
 	}
 
 }
