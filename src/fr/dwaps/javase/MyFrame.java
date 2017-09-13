@@ -1,12 +1,11 @@
 package fr.dwaps.javase;
 
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.FlowLayout;
 
 import javax.swing.JFrame;
 
 @SuppressWarnings("serial")
-public class MyFrame extends JFrame implements MouseListener {
+public class MyFrame extends JFrame {
 	private String title;
 	private int offsetX;
 	private int offsetY;
@@ -24,35 +23,14 @@ public class MyFrame extends JFrame implements MouseListener {
 	}
 	
 	private void initFrame() {
+		// general settings
 		setTitle(title);
 		setBounds(offsetX, offsetY, width, height);
-		setVisible(true);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-		addMouseListener(this);
+		getContentPane().setLayout(new FlowLayout());
+		
+		// display frame
+		setVisible(true);
 	}
 
-	@Override
-	public void mouseClicked(MouseEvent e) {
-		System.out.println("Cliquer");
-	}
-
-	@Override
-	public void mousePressed(MouseEvent e) {
-		System.out.println("Presser");
-	}
-
-	@Override
-	public void mouseReleased(MouseEvent e) {
-		System.out.println("Relâcher");
-	}
-
-	@Override
-	public void mouseEntered(MouseEvent e) {
-		System.out.println("Entrer");
-	}
-
-	@Override
-	public void mouseExited(MouseEvent e) {
-		System.out.println("Sortir");
-	}
 }
